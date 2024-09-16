@@ -8,7 +8,6 @@ import {
   TableRow,
 } from "@mui/material";
 import React, { useEffect, useRef, useState } from "react";
-import { GET } from "../helpers/cocktail";
 import { StarWarDataSchema, StarWarResponse } from "../helpers/types";
 import { P } from "./P";
 
@@ -22,10 +21,7 @@ export const MyTable = () => {
   }, []);
 
   const getData = async () => {
-    const res: Promise<StarWarResponse> = await GET({
-      url,
-      json: true,
-    });
+    const res: Promise<StarWarResponse> = (await fetch(url)).json();
     const results = (await res).results;
     setData(results);
     dataRef.current = results;

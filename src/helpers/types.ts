@@ -1,9 +1,11 @@
-export type StarWarResponse = {
+export interface StarWarResponse extends Response{
   count: number;
   next: string;
   previous: any;
   results: StarWarDataSchema[];
 };
+
+
 
 export type StarWarDataSchema = {
   name: string;
