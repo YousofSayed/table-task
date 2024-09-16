@@ -7,7 +7,7 @@ import {
   TableHead,
   TableRow,
 } from "@mui/material";
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { StarWarDataSchema, StarWarResponse } from "../helpers/types";
 import { P } from "./P";
 
